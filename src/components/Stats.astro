@@ -1,0 +1,214 @@
+---
+// Stats component with countdown animation
+---
+
+<div class="stats-container">
+  <div class="stats-header">
+    <div class="logo">
+      <span class="logo-text">media</span><span class="logo-dot">•</span><span class="logo-text digital">digital</span><span class="logo-dot">•</span><span class="logo-text group">group</span>
+    </div>
+  </div>
+  
+  <div class="stats-grid">
+    <div class="stat-item">
+        <div>
+            <div class="stat-suffix">+</div>
+            <div class="stat-number" data-target="40">0</div>
+        </div>
+    
+      <div class="stat-label">Trusted in over 40 countries</div>
+    </div>
+    
+    <div class="stat-item">
+        <div>
+            <div class="stat-number" data-target="12">0 </div>
+            <div class="stat-suffix">million</div>
+        </div>
+      
+      <div class="stat-label">Serving users across the globe</div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="60">0</div>
+      <div class="stat-label">Operators</div>
+    </div>
+    
+    <div class="stat-item">
+      <div class="stat-number" data-target="300">0</div>
+      <div class="stat-label">Active partnerships</div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .stats-container {
+    padding: 60px 40px;
+    text-align: center;
+    font-family: "Manrope", sans-serif;
+    max-width: 84rem;
+    margin: 0 auto;
+  }
+  
+  .stats-header {
+    margin-bottom: 50px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+  }
+  
+  .logo-text {
+    color: #6366f1;
+  }
+  
+  .logo-text.digital {
+    color: #06b6d4;
+  }
+  
+  .logo-text.group {
+    color: #ef4444;
+  }
+  
+  .logo-dot {
+    color: #6b7280;
+    margin: 0 4px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+  }
+  
+  .stat-item {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }.stat-item:last-child{
+    width: 41%;
+  }
+  
+  .stat-number {
+    font-size: 72px;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1;
+    margin-bottom: 8px;
+    display: inline-block;
+    min-height: 72px;
+  }
+  
+  .stat-suffix {
+    font-size: 72px;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1;
+    margin-left: 8px;
+    display: inline-block;
+    min-height: 72px;
+  }
+  
+  .stat-label {
+    font-size: .8rem;
+    color: #4c5058;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 200px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+    
+    .stat-number, .stat-suffix {
+      font-size: 56px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .stats-container {
+      padding: 40px 20px;
+    }
+    
+    .stats-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .stat-number, .stat-suffix {
+      font-size: 48px;
+    }
+    
+    .logo {
+      font-size: 20px;
+    }
+  }
+</style>
+
+<script>
+  // Smooth animated counter function
+  function animateCounter(element: HTMLElement, target: number, duration: number = 2500) {
+    const start = 0;
+    const startTime = performance.now();
+    
+    function easeOut(t: number): number {
+      return 1 - Math.pow(1 - t, 3);
+    }
+    
+    function updateCounter(currentTime: number) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      
+      const current = Math.floor(start + (target - start) * easeOut);
+      
+      element.textContent = current.toString();
+      
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        element.textContent = target.toString();
+      }
+    }
+    
+    requestAnimationFrame(updateCounter);
+  }
+  
+  // Intersection Observer to trigger animations when component is visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const statNumbers = entry.target.querySelectorAll('.stat-number');
+        
+        statNumbers.forEach((element, index) => {
+          const target = parseInt((element as HTMLElement).dataset.target || '0');
+          
+          // Stagger the animations
+          setTimeout(() => {
+            animateCounter(element as HTMLElement, target);
+          }, index * 200);
+        });
+        
+        // Unobserve after animation starts
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+  
+  // Start observing when the component is loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const statsContainer = document.querySelector('.stats-container');
+    if (statsContainer) {
+      observer.observe(statsContainer);
+    }
+  });
+</script>
