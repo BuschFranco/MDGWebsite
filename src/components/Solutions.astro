@@ -1,0 +1,433 @@
+<div class="solutions">
+    <div class="solutions-title">
+          <h1>Our way <br> to make it happen</h1>
+    </div>
+    <div class="solutions-articles">
+        <div class="horizontal-scroll-wrapper">
+            <div class="horizontal-scroll-container">
+                <div class="article-card">
+                    <h3>WE LISTEN & UNDERSTAND</h3>
+                    <p>We start by listening to you, understanding your business, aligning on goals.</p>
+                </div>
+                <div class="article-card">
+                    <h3>PRODUCT WITH PURPOSE</h3>
+                    <p>We adapt our product – whether created in-house, licensed, or in partnership with leading brands – to fit your market perfectly.</p>
+                </div>
+                <div class="article-card">
+                    <h3>STRATEGIC PARTNERSHIPS</h3>
+                    <p>We close agreements with key distributors and set up business operations.</p>
+                </div>
+                <div class="article-card">
+                    <h3>SEAMLESS TECH INTEGRATION</h3>
+                    <p>We integrate our platform seamlessly with your systems, ensuring smooth operation and scalability.</p>
+                </div>
+                <div class="article-card">
+                    <h3>MARKETING THAT MOVES</h3>
+                    <p>We launch powerful marketing campaigns to drive adoption, engagement, and revenue.</p>
+                </div>
+                <!-- Duplicado para scroll infinito -->
+                <div class="article-card">
+                    <h3>WE LISTEN & UNDERSTAND</h3>
+                    <p>We start by listening to you, understanding your business, aligning on goals.</p>
+                </div>
+                <div class="article-card">
+                    <h3>PRODUCT WITH PURPOSE</h3>
+                    <p>We adapt our product – whether created in-house, licensed, or in partnership with leading brands – to fit your market perfectly.</p>
+                </div>
+                <div class="article-card">
+                    <h3>STRATEGIC PARTNERSHIPS</h3>
+                    <p>We close agreements with key distributors and set up business operations.</p>
+                </div>
+                <div class="article-card">
+                    <h3>SEAMLESS TECH INTEGRATION</h3>
+                    <p>We integrate our platform seamlessly with your systems, ensuring smooth operation and scalability.</p>
+                </div>
+                <div class="article-card">
+                    <h3>MARKETING THAT MOVES</h3>
+                    <p>We launch powerful marketing campaigns to drive adoption, engagement, and revenue.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .solutions {
+        text-align: center;
+        padding: 4rem 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .solutions-title {
+        margin-bottom: 3rem;
+    }
+    
+    .solutions-title h1 {
+        color: #ff3737;
+        line-height: 1;
+        font-size: 4rem;
+        font-weight: 500;
+        margin: 0;
+    }
+    
+    .solutions-articles {
+        margin-top: 2rem;
+        overflow: hidden;
+    }
+    
+    .horizontal-scroll-wrapper {
+           position: relative;
+           height: 800px;
+           overflow-x: auto;
+           overflow-y: hidden;
+           cursor: pointer;
+           width: 100%;
+           -webkit-overflow-scrolling: touch;
+           scrollbar-width: none;
+           -ms-overflow-style: none;
+       }
+       
+       .horizontal-scroll-wrapper::-webkit-scrollbar {
+           display: none;
+       }
+    
+    .horizontal-scroll-container {
+        display: flex;
+        gap: -2rem;
+        padding: 4rem 0 0 0;
+        width: max-content;
+        transition: transform 0.3s ease;
+        align-items: flex-start;
+    }
+    
+    .article-card {
+        flex: 0 0 500px;
+        height: 500px;
+        background: white;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+        padding: 2rem;
+        color: #333;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-left: -1.5rem;
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .article-card:first-child {
+        margin-left: 0;
+    }
+    
+    .article-card.active {
+        z-index: 10;
+    }
+    
+    .article-card.active {
+        transform: translateY(-10px) scale(1.1);
+        background: #ff6b35;
+        color: white;
+        border-color: #ff6b35;
+        box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+    }
+    
+    .article-card h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: inherit;
+        line-height: 1.2;
+    }
+    
+    .article-card p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin: 0;
+        opacity: 0.9;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .solutions {
+            padding: 0;
+        }
+        
+        .solutions-title h1 {
+            font-size: 3.5rem;
+        }
+        
+        .horizontal-scroll-wrapper {
+            height: 750px;
+        }
+        
+        .horizontal-scroll-container {
+            padding: 3rem 0 0 0;
+        }
+        
+        .article-card {
+            flex: 0 0 470px;
+            height: 470px;
+            padding: 1.5rem;
+            margin-left: -75px;
+        }
+        
+        .article-card h3 {
+            font-size: 1.6rem;
+        }
+        
+        .article-card p {
+            font-size: 1rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .solutions {
+            padding: 0;
+        }
+        
+        .solutions-title {
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+        
+        .solutions-title h1 {
+            font-size: 2.8rem;
+            line-height: 1.1;
+        }
+        
+        .horizontal-scroll-wrapper {
+            height: 350px;
+            cursor: grab;
+        }
+        
+        .horizontal-scroll-wrapper:active {
+            cursor: grabbing;
+        }
+        
+        .horizontal-scroll-container {
+            padding: 2rem 2rem 2rem 2rem;
+            width: fit-content;
+        }
+        
+        .article-card {
+            flex: 0 0 300px;
+            height: 300px;
+            padding: 1rem;
+            margin-left: -50px;
+        }
+        
+        .article-card:first-child {
+            margin-left: 0;
+        }
+        
+        .article-card:last-child {
+            margin-right: 2rem;
+        }
+        
+        .article-card h3 {
+            font-size: 1.2rem;
+        }
+        
+        .article-card p {
+            font-size: 0.85rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .solutions {
+            padding: 0;
+        }
+        
+        .solutions-title {
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+        
+        .solutions-title h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+        }
+        
+        .solutions-articles {
+            margin-top: 1.5rem;
+        }
+        
+        .horizontal-scroll-wrapper {
+            height: 380px;
+            cursor: grab;
+        }
+        
+        .horizontal-scroll-wrapper:active {
+            cursor: grabbing;
+        }
+        
+        .horizontal-scroll-container {
+            padding: 2rem 1.5rem 2rem 1.5rem;
+            width: fit-content;
+        }
+        
+        .article-card {
+            flex: 0 0 280px;
+            height: 280px;
+            padding: 0.8rem;
+            margin-left: -40px;
+        }
+        
+        .article-card:first-child {
+            margin-left: 0;
+        }
+        
+        .article-card:last-child {
+            margin-right: 1.5rem;
+        }
+        
+        .article-card h3 {
+            font-size: 1.1rem;
+        }
+        
+        .article-card p {
+            font-size: 0.8rem;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        .solutions-title h1 {
+            font-size: 1.8rem;
+        }
+        
+        .horizontal-scroll-wrapper {
+            height: 400px;
+            cursor: grab;
+        }
+        
+        .horizontal-scroll-wrapper:active {
+            cursor: grabbing;
+        }
+        
+        .horizontal-scroll-container {
+            padding: 2rem 1rem 2rem 1rem;
+            width: fit-content;
+        }
+        
+        .article-card {
+            flex: 0 0 250px;
+            height: 250px;
+            padding: 0.6rem;
+            margin-left: -30px;
+        }
+        
+        .article-card:first-child {
+            margin-left: 0;
+        }
+        
+        .article-card:last-child {
+            margin-right: 1rem;
+        }
+        
+        .article-card h3 {
+            font-size: 1rem;
+        }
+        
+        .article-card p {
+            font-size: 0.75rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const wrapper = document.querySelector('.horizontal-scroll-wrapper');
+        const container = document.querySelector('.horizontal-scroll-container');
+        const cards = document.querySelectorAll('.article-card');
+        
+        if (wrapper && container && cards.length > 0) {
+            let currentScroll = 0;
+            const isMobile = window.innerWidth <= 768;
+            
+            function updateActiveCard() {
+                // Remover clase active de todas las tarjetas
+                cards.forEach(card => card.classList.remove('active'));
+                
+                if (isMobile) {
+                    // En móviles, usar el scroll position para determinar la tarjeta activa
+                    const scrollLeft = wrapper.scrollLeft;
+                    const cardWidth = cards[0].offsetWidth;
+                    const cardMargin = Math.abs(parseInt(getComputedStyle(cards[1] || cards[0]).marginLeft) || 0);
+                    const effectiveCardWidth = cardWidth - cardMargin;
+                    
+                    let activeIndex = Math.round(scrollLeft / effectiveCardWidth);
+                    activeIndex = Math.max(0, Math.min(activeIndex, cards.length - 1));
+                    
+                    if (cards[activeIndex]) {
+                        cards[activeIndex].classList.add('active');
+                    }
+                } else {
+                    // En desktop, calcular qué tarjeta está más centrada
+                    const wrapperRect = wrapper.getBoundingClientRect();
+                    const wrapperCenter = wrapperRect.left + wrapperRect.width / 2;
+                    
+                    let closestCard = null;
+                    let closestDistance = Infinity;
+                    
+                    cards.forEach(card => {
+                        const cardRect = card.getBoundingClientRect();
+                        const cardCenter = cardRect.left + cardRect.width / 2;
+                        const distance = Math.abs(cardCenter - wrapperCenter);
+                        
+                        if (distance < closestDistance) {
+                            closestDistance = distance;
+                            closestCard = card;
+                        }
+                    });
+                    
+                    // Agregar clase active a la tarjeta más cercana al centro
+                    if (closestCard) {
+                        closestCard.classList.add('active');
+                    }
+                }
+            }
+            
+            if (isMobile) {
+                // En móviles, usar scroll nativo y escuchar el evento scroll
+                wrapper.addEventListener('scroll', function() {
+                    setTimeout(updateActiveCard, 50);
+                });
+            } else {
+                // En desktop, interceptar el scroll vertical y convertirlo en horizontal
+                wrapper.addEventListener('wheel', function(e) {
+                    const maxScroll = container.scrollWidth - wrapper.clientWidth;
+                    const scrollSpeed = 35; // Velocidad del scroll
+                    
+                    // Calcular el nuevo scroll
+                    const newScroll = currentScroll + (e.deltaY > 0 ? scrollSpeed : -scrollSpeed);
+                    
+                    // Si estamos en los límites y el scroll va en esa dirección, permitir scroll vertical
+                    if ((newScroll <= 0 && e.deltaY < 0) || (newScroll >= maxScroll && e.deltaY > 0)) {
+                        // No prevenir el evento, permitir scroll vertical
+                        return;
+                    }
+                    
+                    // Prevenir scroll vertical solo si estamos dentro del rango horizontal
+                    e.preventDefault();
+                    
+                    currentScroll = Math.max(0, Math.min(newScroll, maxScroll));
+                    container.style.transform = `translateX(-${currentScroll}px)`;
+                    
+                    // Actualizar tarjeta activa después del scroll
+                    setTimeout(updateActiveCard, 50);
+                });
+            }
+            
+            // Inicializar la primera tarjeta como activa
+            updateActiveCard();
+        }
+    });
+</script>

@@ -11,30 +11,32 @@
   
   <div class="stats-grid">
     <div class="stat-item">
-        <div>
-            <div class="stat-suffix">+</div>
-            <div class="stat-number" data-target="40">0</div>
-        </div>
-    
+      <div class="stat-number-container">
+        <div class="stat-number" data-target="40">0</div>
+        <div class="stat-suffix">+</div>
+      </div>
       <div class="stat-label">Trusted in over 40 countries</div>
     </div>
     
     <div class="stat-item">
-        <div>
-            <div class="stat-number" data-target="12">0 </div>
-            <div class="stat-suffix">million</div>
-        </div>
-      
+      <div class="stat-number-container">
+        <div class="stat-number" data-target="12">0</div>
+        <div class="stat-suffix">million</div>
+      </div>
       <div class="stat-label">Serving users across the globe</div>
     </div>
     
     <div class="stat-item">
-      <div class="stat-number" data-target="60">0</div>
+      <div class="stat-number-container">
+        <div class="stat-number" data-target="60">0</div>
+      </div>
       <div class="stat-label">Operators</div>
     </div>
     
     <div class="stat-item">
-      <div class="stat-number" data-target="300">0</div>
+      <div class="stat-number-container">
+        <div class="stat-number" data-target="300">0</div>
+      </div>
       <div class="stat-label">Active partnerships</div>
     </div>
   </div>
@@ -88,8 +90,14 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }.stat-item:last-child{
-    width: 41%;
+  }
+  
+  .stat-number-container {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 8px;
+    min-height: 72px;
   }
   
   .stat-number {
@@ -97,9 +105,7 @@
     font-weight: 800;
     color: #1f2937;
     line-height: 1;
-    margin-bottom: 8px;
     display: inline-block;
-    min-height: 72px;
   }
   
   .stat-suffix {
@@ -109,7 +115,6 @@
     line-height: 1;
     margin-left: 8px;
     display: inline-block;
-    min-height: 72px;
   }
   
   .stat-label {
@@ -122,19 +127,59 @@
   
   /* Responsive design */
   @media (max-width: 1024px) {
+    .stats-container {
+      padding: 50px 30px;
+    }
+    
     .stats-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
     }
     
+    .stat-number-container {
+      min-height: 56px;
+    }
+    
     .stat-number, .stat-suffix {
       font-size: 56px;
+    }
+    
+    .stat-label {
+      font-size: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .stats-container {
+      padding: 40px 20px;
+    }
+    
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 35px;
+    }
+    
+    .stat-number-container {
+      min-height: 52px;
+    }
+    
+    .stat-number, .stat-suffix {
+      font-size: 52px;
+    }
+    
+    .stat-label {
+      font-size: 0.7rem;
+      max-width: 180px;
+    }
+    
+    .logo {
+      font-size: 18px;
     }
   }
   
   @media (max-width: 640px) {
     .stats-container {
-      padding: 40px 20px;
+      padding: 35px 15px;
     }
     
     .stats-grid {
@@ -142,12 +187,71 @@
       gap: 30px;
     }
     
+    .stat-number-container {
+      min-height: 48px;
+    }
+    
     .stat-number, .stat-suffix {
       font-size: 48px;
     }
     
+    .stat-label {
+      font-size: 0.75rem;
+      max-width: 250px;
+    }
+    
     .logo {
-      font-size: 20px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .stats-container {
+      padding: 30px 10px;
+    }
+    
+    .stats-grid {
+      gap: 25px;
+    }
+    
+    .stat-number-container {
+      min-height: 42px;
+    }
+    
+    .stat-number, .stat-suffix {
+      font-size: 42px;
+    }
+    
+    .stat-label {
+      font-size: 0.7rem;
+      max-width: 200px;
+    }
+    
+    .logo {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .stats-container {
+      padding: 25px 8px;
+    }
+    
+    .stat-number-container {
+      min-height: 36px;
+    }
+    
+    .stat-number, .stat-suffix {
+      font-size: 36px;
+    }
+    
+    .stat-label {
+      font-size: 0.65rem;
+      max-width: 180px;
+    }
+    
+    .logo {
+      font-size: 12px;
     }
   }
 </style>

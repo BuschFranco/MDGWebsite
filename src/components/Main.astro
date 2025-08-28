@@ -15,7 +15,38 @@
         color: #3f3f3f;
         line-height: 1.3;
         text-align: center;
-    }div h3 span{
+    }
+    
+    div h3 span{
         font-weight: 600;
+    }
+    
+    /* Responsive Design - Solo para móviles */
+    @media (max-width: 768px) {
+        div h3 {
+            width: 80%;
+            font-size: 1.6rem;
+            padding: 0 1rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        div h3 {
+            width: 90%;
+            max-width: 320px;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            padding: 0 1.5rem;
+        }
+    }
+    
+    @media (max-width: 320px) {
+        div h3 {
+            width: 95%;
+            max-width: 280px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            padding: 0 1rem;
+        }
     }
 </style>

@@ -1,8 +1,16 @@
 <nav>
-    <div>
-        <img src="/logo.png" alt="">
+    <div class="nav-logo">
+        <img src="/logo.png" alt="MDG Logo">
     </div>
-    <div>
+    
+    <!-- Menú hamburguesa para móviles -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    
+    <div class="nav-links" id="navLinks">
         <a href="/">Home</a>
         <a href="/">Who we are</a>
         <a href="/">Solutions</a>
@@ -19,24 +27,173 @@
         align-items: center;
         padding: 1.5rem 2rem;
         background-color: #fff;
-       
-    }nav a {
+        position: relative;
+    }
+    
+    .nav-logo img {
+        width: 7rem;
+        height: auto;
+    }
+    
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 24px;
+        justify-content: space-between;
+    }
+    
+    .hamburger span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background-color: #666;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+    
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav-links a {
         margin-right: 1rem;
         text-decoration: none;
         font-weight: bold;
         color: #666;
         text-transform: uppercase;
         transition: .4s;
-    }nav a:hover{
+    }
+    
+    .nav-links a:hover {
         color: #874fff;
-    }nav a:last-child{
+    }
+    
+    .nav-links a:last-child {
         padding: .8rem 1.8rem;
-        background-color:#ff7237;
+        background-color: #ff7237;
         border-radius: 2rem;
         color: white;
-        font-weight:300;
+        font-weight: 300;
+        margin-right: 0;
     }
-    nav img{
-        width: 7rem
+    
+    .nav-links a:last-child:hover {
+        background-color: #e55a1f;
+        color: white;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        nav {
+            padding: 1rem;
+        }
+        
+        .nav-logo img {
+            width: 5rem;
+        }
+        
+        .hamburger {
+            display: flex;
+        }
+        
+        .nav-links {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            flex-direction: column;
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            z-index: 1000;
+            border-top: 1px solid #eee;
+        }
+        
+        .nav-links.active {
+            max-height: 400px;
+        }
+        
+        .nav-links a {
+            margin: 0;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+            border-bottom: 1px solid #f0f0f0;
+            display: block;
+        }
+        
+        .nav-links a:last-child {
+            margin: 1rem auto;
+            align-self: center;
+            width: auto;
+            border-bottom: none;
+            border-radius: 2rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        nav {
+            padding: 0.8rem;
+        }
+        
+        .nav-logo img {
+            width: 4rem;
+        }
+        
+        .nav-links a {
+            font-size: 0.9rem;
+        }
     }
 </style>
+
+<script>
+    // Funcionalidad del menú hamburguesa
+    document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        if (hamburger && navLinks) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer click en un enlace
+            navLinks.addEventListener('click', (e) => {
+                if (e.target.tagName === 'A') {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+            
+            // Cerrar menú al hacer click fuera
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+    });
+</script>
