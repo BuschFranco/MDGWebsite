@@ -30,7 +30,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         max-width: 65rem;
-        width: 110%;
+        width: 100%;
         height: auto;
         z-index: 2;
         animation: slideInFromLeftCentered 1.5s ease-out 0.3s both;
@@ -98,7 +98,7 @@
 </style>
 
 <div>
-    <h3>At <span>Media Digital Group</span>, we believe in the power of ideas… transforming bold visions into thriving businesses.</h3>
+    <h3 data-translate="main.title">At <span>Media Digital Group</span>, we believe in the power of ideas… transforming bold visions into thriving businesses.</h3>
 </div>
 
 <style>
@@ -124,8 +124,15 @@
         }
     }
     
-    div h3 span{
-        font-weight: 600;
+    h3[data-translate="main.title"] span {
+        font-weight: 700 !important;
+        font-weight: bold !important;
+        color: #000 !important;
+    }
+    
+    div h3 span {
+        font-weight: 700 !important;
+        font-weight: bold !important;
     }
     
     /* Responsive Design - Solo para móviles */

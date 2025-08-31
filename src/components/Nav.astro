@@ -11,12 +11,35 @@
     </button>
     
     <div class="nav-links" id="navLinks">
-        <a href="/">Home</a>
-        <a href="/">Who we are</a>
-        <a href="/">Solutions</a>
-        <a href="/">Blog</a>
-        <a href="/">People</a>
-        <a href="/">Contact Us</a>
+        <a href="/" data-translate="nav.home">Home</a>
+        <a href="/" data-translate="nav.who_we_are">Who we are</a>
+        <a href="/" data-translate="nav.solutions">Solutions</a>
+        <a href="/" data-translate="nav.blog">Blog</a>
+        <a href="/" data-translate="nav.people">People</a>
+        <a href="/" data-translate="nav.contact_us">Contact Us</a>
+        
+        <!-- Selector de idioma -->
+        <div class="language-selector">
+            <button class="language-btn" id="languageBtn">
+                <span class="flag" id="currentFlag">🇺🇸</span>
+                <span class="lang-code" id="currentLang">EN</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="language-dropdown" id="languageDropdown">
+                <div class="language-option" data-lang="en">
+                    <span class="flag">🇺🇸</span>
+                    <span>English</span>
+                </div>
+                <div class="language-option" data-lang="es">
+                    <span class="flag">🇪🇸</span>
+                    <span>Español</span>
+                </div>
+                <div class="language-option" data-lang="pt">
+                    <span class="flag">🇧🇷</span>
+                    <span>Português</span>
+                </div>
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -86,7 +109,7 @@
         color: #874fff;
     }
     
-    .nav-links a:last-child {
+    .nav-links a:nth-last-child(2) {
         padding: .8rem 1.8rem;
         background-color: #ff7237;
         border-radius: 2rem;
@@ -95,15 +118,106 @@
         margin-right: 0;
     }
     
-    .nav-links a:last-child:hover {
+    .nav-links a:nth-last-child(2):hover {
         background-color: #e55a1f;
         color: white;
+    }
+
+    /* Selector de idioma */
+    .language-selector {
+        position: relative;
+        margin-left: 1rem;
+    }
+
+    .language-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+
+    .language-btn:hover {
+        background: #e9ecef;
+        border-color: #dee2e6;
+    }
+
+    .flag {
+        font-size: 1.2rem;
+    }
+
+    .lang-code {
+        font-weight: 600;
+        color: #495057;
+    }
+
+    .arrow {
+        font-size: 0.8rem;
+        color: #6c757d;
+        transition: transform 0.3s ease;
+    }
+
+    .language-btn.active .arrow {
+        transform: rotate(180deg);
+    }
+
+    .language-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: white;
+        border: 1px solid #e9ecef;
+        border-radius: 0.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        min-width: 150px;
+        z-index: 1001;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .language-dropdown.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .language-option {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border-bottom: 1px solid #f8f9fa;
+    }
+
+    .language-option:last-child {
+        border-bottom: none;
+    }
+
+    .language-option:hover {
+        background-color: #f8f9fa;
+    }
+
+    .language-option span:last-child {
+        font-weight: 500;
+        color: #495057;
     }
     
     /* Responsive Design */
     @media (max-width: 768px) {
         nav {
-            padding: 1rem;
+            padding: 1rem 0.5rem;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .nav-logo img {
@@ -132,6 +246,7 @@
         
         .nav-links.active {
             max-height: 400px;
+            overflow: visible;
         }
         
         .nav-links a {
@@ -150,11 +265,44 @@
             border-bottom: none;
             border-radius: 2rem;
         }
+
+        .language-selector {
+            margin: 1rem auto 0;
+            align-self: center;
+            position: relative;
+            z-index: 1002;
+        }
+
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: auto;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .language-dropdown.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
     }
     
     @media (max-width: 480px) {
         nav {
-            padding: 0.8rem;
+            padding: 0.8rem 0.5rem;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .nav-logo img {
@@ -164,12 +312,152 @@
         .nav-links a {
             font-size: 0.9rem;
         }
-    }
+        
+        .language-selector {
+            z-index: 1002;
+        }
+        
+        .language-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: auto;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 150px;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .language-dropdown.active {
+             opacity: 1;
+             visibility: visible;
+             transform: translateY(0);
+         }
+     }
+     
+     @media (max-width: 320px) {
+         .language-selector {
+             z-index: 1002;
+         }
+         
+         .language-dropdown {
+             position: absolute;
+             top: 100%;
+             right: 0;
+             left: auto;
+             background: white;
+             border: 1px solid #e9ecef;
+             border-radius: 0.5rem;
+             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+             min-width: 120px;
+             z-index: 1001;
+             opacity: 0;
+             visibility: hidden;
+             transform: translateY(-10px);
+             transition: all 0.3s ease;
+         }
+         
+         .language-dropdown.active {
+             opacity: 1;
+             visibility: visible;
+             transform: translateY(0);
+         }
+     }
 </style>
 
 <script>
-    // Funcionalidad del menú hamburguesa
+    // Variables globales para traducción
+    let translations = {};
+    let currentLanguage = localStorage.getItem('language') || 'en';
+
+    // Cargar traducciones
+    async function loadTranslations() {
+        try {
+            const response = await fetch('/translations.json');
+            translations = await response.json();
+            updateLanguageDisplay();
+            // Solo traducir si no es inglés (mantener HTML original para inglés)
+            if (currentLanguage !== 'en') {
+                translatePage();
+            }
+        } catch (error) {
+            console.error('Error loading translations:', error);
+        }
+    }
+
+    // Actualizar display del idioma actual
+    function updateLanguageDisplay() {
+        const currentFlag = document.getElementById('currentFlag');
+        const currentLang = document.getElementById('currentLang');
+        
+        const flags = { en: '🇺🇸', es: '🇪🇸', pt: '🇧🇷' };
+        const codes = { en: 'EN', es: 'ES', pt: 'PT' };
+        
+        if (currentFlag && currentLang) {
+            currentFlag.textContent = flags[currentLanguage];
+            currentLang.textContent = codes[currentLanguage];
+        }
+    }
+
+    // Traducir página
+    function translatePage() {
+        const elements = document.querySelectorAll('[data-translate]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            const translation = getNestedTranslation(translations[currentLanguage], key);
+            
+            if (translation) {
+                // Usar innerHTML para permitir HTML en las traducciones
+                if (translation.includes('<') && translation.includes('>')) {
+                    element.innerHTML = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+
+        // Traducir placeholders
+        const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
+        placeholderElements.forEach(element => {
+            const key = element.getAttribute('data-translate-placeholder');
+            const translation = getNestedTranslation(translations[currentLanguage], key);
+            if (translation) {
+                element.placeholder = translation;
+            }
+        });
+
+        // Actualizar texto del preloader
+        const preloaderText = document.querySelector('.loader p');
+        if (preloaderText && translations[currentLanguage]?.loading) {
+            preloaderText.textContent = translations[currentLanguage].loading;
+        }
+    }
+
+    // Obtener traducción anidada
+    function getNestedTranslation(obj, path) {
+        return path.split('.').reduce((current, key) => current && current[key], obj);
+    }
+
+    // Cambiar idioma
+    function changeLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem('language', lang);
+        updateLanguageDisplay();
+        translatePage();
+    }
+
+    // Funcionalidad del menú hamburguesa y selector de idioma
     document.addEventListener('DOMContentLoaded', () => {
+        // Cargar traducciones
+        loadTranslations();
+
+        // Menú hamburguesa
         const hamburger = document.getElementById('hamburger');
         const navLinks = document.getElementById('navLinks');
         
@@ -189,11 +477,49 @@
             
             // Cerrar menú al hacer click fuera
             document.addEventListener('click', (e) => {
-                if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                const languageSelector = document.querySelector('.language-selector');
+                const isOutsideMenu = !hamburger.contains(e.target) && !navLinks.contains(e.target);
+                const isOutsideLanguageSelector = !languageSelector || !languageSelector.contains(e.target);
+                
+                if (isOutsideMenu && isOutsideLanguageSelector) {
                     hamburger.classList.remove('active');
                     navLinks.classList.remove('active');
                 }
             });
         }
+
+        // Selector de idioma
+        const languageBtn = document.getElementById('languageBtn');
+        const languageDropdown = document.getElementById('languageDropdown');
+        const languageOptions = document.querySelectorAll('.language-option');
+
+        if (languageBtn && languageDropdown) {
+            languageBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                languageBtn.classList.toggle('active');
+                languageDropdown.classList.toggle('active');
+            });
+
+            languageOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const lang = option.getAttribute('data-lang');
+                    changeLanguage(lang);
+                    languageBtn.classList.remove('active');
+                    languageDropdown.classList.remove('active');
+                });
+            });
+
+            // Cerrar dropdown al hacer click fuera
+            document.addEventListener('click', (e) => {
+                if (!languageBtn.contains(e.target) && !languageDropdown.contains(e.target)) {
+                    languageBtn.classList.remove('active');
+                    languageDropdown.classList.remove('active');
+                }
+            });
+        }
     });
+
+    // Exponer función para uso global
+    window.translatePage = translatePage;
+    window.changeLanguage = changeLanguage;
 </script>

@@ -1,0 +1,275 @@
+{
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "who_we_are": "Quiénes somos",
+      "solutions": "Soluciones",
+      "blog": "Blog",
+      "people": "Personas",
+      "contact_us": "Contáctanos"
+    },
+    "main": {
+      "title": "En <span>Media Digital Group</span>, creemos en el poder de las ideas… transformando visiones audaces en negocios prósperos."
+    },
+    "about": {
+      "title": "Acerca de nosotros",
+      "description": "En Media Digital Group, somos expertos en transformar productos digitales premium en flujos de ingresos rentables. Podemos ayudarte de diferentes maneras, dependiendo de tus necesidades:",
+      "mobile_operator": {
+        "title": "OPERADOR MÓVIL",
+        "description": "Si eres un <strong>operador móvil</strong>, entregamos contenido de alta calidad que aumenta el engagement y los ingresos."
+      },
+      "brands": {
+        "title": "PARA MARCAS",
+        "description": "Tenemos la plataforma para monetizar tu marca. Usando DCB, tarjetas de crédito, billeteras móviles y más, te ayudamos a hacer crecer los ingresos y llevar tu marca a todos los rincones del mundo."
+      },
+      "card1_title": "Innovación Digital",
+      "card1_desc": "Desarrollamos estrategias digitales innovadoras que transforman la manera en que las marcas se conectan con sus audiencias.",
+      "card2_title": "Alcance Global",
+      "card2_desc": "Conectamos marcas con audiencias en más de 40 países, maximizando el impacto y la presencia internacional.",
+      "card3_title": "Resultados Medibles",
+      "card3_desc": "Proporcionamos análisis detallados y métricas precisas para optimizar continuamente el rendimiento de las campañas."
+    },
+    "solutions": {
+      "title": "Nuestra forma <br> de hacerlo realidad",
+      "step1": {
+        "title": "ESCUCHAMOS Y ENTENDEMOS",
+        "description": "Comenzamos escuchándote, entendiendo tu negocio, alineándonos en los objetivos."
+      },
+      "step2": {
+        "title": "PRODUCTO CON PROPÓSITO",
+        "description": "Adaptamos nuestro producto – ya sea creado internamente, licenciado o en asociación con marcas líderes – para que se ajuste perfectamente a tu mercado."
+      },
+      "step3": {
+        "title": "ALIANZAS ESTRATÉGICAS",
+        "description": "Cerramos acuerdos con distribuidores clave y establecemos operaciones comerciales."
+      },
+      "step4": {
+        "title": "INTEGRACIÓN TECNOLÓGICA PERFECTA",
+        "description": "Integramos nuestra plataforma sin problemas con tus sistemas, asegurando una operación fluida y escalabilidad."
+      },
+      "step5": {
+        "title": "MARKETING QUE MUEVE",
+        "description": "Lanzamos campañas de marketing poderosas para impulsar la adopción, el engagement y los ingresos."
+      },
+      "card1_title": "Publicidad Digital",
+      "card1_desc": "Campañas publicitarias efectivas en múltiples plataformas digitales.",
+      "card2_title": "Marketing de Contenidos",
+      "card2_desc": "Creación de contenido atractivo que conecta con tu audiencia objetivo.",
+      "card3_title": "Análisis de Datos",
+      "card3_desc": "Insights profundos para optimizar tus estrategias de marketing.",
+      "card4_title": "Gestión de Redes",
+      "card4_desc": "Administración profesional de tus perfiles en redes sociales.",
+      "card5_title": "SEO y SEM",
+      "card5_desc": "Optimización para motores de búsqueda y marketing de búsqueda."
+    },
+    "stats": {
+      "countries": "Confianza en más de 40 países",
+      "users": "Sirviendo usuarios en todo el mundo",
+      "operators": "Operadores",
+      "partnerships": "Alianzas activas"
+    },
+    "contact": {
+      "title": "Estamos esperando que nos contactes ;)",
+      "form": {
+        "name": "NOMBRE",
+        "email": "EMAIL",
+        "message": "MENSAJE",
+        "submit": "ENVIAR",
+        "name_placeholder": "Ingresa tu nombre",
+        "email_placeholder": "Ingresa tu email",
+        "message_placeholder": "Ingresa tu mensaje"
+      },
+      "subtitle": "¿Listo para llevar tu marca al siguiente nivel? Conectemos y exploremos las posibilidades juntos.",
+      "name_placeholder": "Tu nombre",
+      "email_placeholder": "Tu email",
+      "message_placeholder": "Tu mensaje",
+      "send_button": "Enviar mensaje"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados"
+    },
+    "loading": "Cargando..."
+  },
+  "en": {
+    "nav": {
+      "home": "Home",
+      "who_we_are": "Who we are",
+      "solutions": "Solutions",
+      "blog": "Blog",
+      "people": "People",
+      "contact_us": "Contact Us"
+    },
+    "main": {
+      "title": "At <span>Media Digital Group</span>, we believe in the power of ideas… transforming bold visions into thriving businesses."
+    },
+    "about": {
+      "title": "About us",
+      "description": "At Media Digital Group, we are experts in transforming premium digital products into profitable revenue streams. We can help you in different ways, depending on your needs:",
+      "mobile_operator": {
+        "title": "MOBILE OPERATOR",
+        "description": "If you're a <strong>mobile operator</strong>, we deliver high-quality content that boosts engagement and revenue."
+      },
+      "brands": {
+        "title": "FOR BRANDS",
+        "description": "We have the platform to monetize your brand. Using DCB, credit cards, mobile wallets, and more, we help you grow revenue and take your brand to every corner of the world."
+      },
+      "card1_title": "Digital Innovation",
+      "card1_desc": "We develop innovative digital strategies that transform how brands connect with their audiences.",
+      "card2_title": "Global Reach",
+      "card2_desc": "We connect brands with audiences in over 40 countries, maximizing impact and international presence.",
+      "card3_title": "Measurable Results",
+      "card3_desc": "We provide detailed analytics and precise metrics to continuously optimize campaign performance."
+    },
+    "solutions": {
+      "title": "Our way <br> to make it happen",
+      "step1": {
+        "title": "WE LISTEN & UNDERSTAND",
+        "description": "We start by listening to you, understanding your business, aligning on goals."
+      },
+      "step2": {
+        "title": "PRODUCT WITH PURPOSE",
+        "description": "We adapt our product – whether created in-house, licensed, or in partnership with leading brands – to fit your market perfectly."
+      },
+      "step3": {
+        "title": "STRATEGIC PARTNERSHIPS",
+        "description": "We close agreements with key distributors and set up business operations."
+      },
+      "step4": {
+        "title": "SEAMLESS TECH INTEGRATION",
+        "description": "We integrate our platform seamlessly with your systems, ensuring smooth operation and scalability."
+      },
+      "step5": {
+        "title": "MARKETING THAT MOVES",
+        "description": "We launch powerful marketing campaigns to drive adoption, engagement, and revenue."
+      },
+      "card1_title": "Digital Advertising",
+      "card1_desc": "Effective advertising campaigns across multiple digital platforms.",
+      "card2_title": "Content Marketing",
+      "card2_desc": "Creating engaging content that connects with your target audience.",
+      "card3_title": "Data Analytics",
+      "card3_desc": "Deep insights to optimize your marketing strategies.",
+      "card4_title": "Social Media Management",
+      "card4_desc": "Professional management of your social media profiles.",
+      "card5_title": "SEO & SEM",
+      "card5_desc": "Search engine optimization and search engine marketing."
+    },
+    "stats": {
+      "countries": "Trusted in over 40 countries",
+      "users": "Serving users across the globe",
+      "operators": "Operators",
+      "partnerships": "Active partnerships"
+    },
+    "contact": {
+      "title": "We are waiting for you to contact us ;)",
+      "form": {
+        "name": "NAME",
+        "email": "EMAIL",
+        "message": "MESSAGE",
+        "submit": "SUBMIT",
+        "name_placeholder": "Enter your name",
+        "email_placeholder": "Enter your email",
+        "message_placeholder": "Enter your message"
+      },
+      "subtitle": "Ready to take your brand to the next level? Let's connect and explore the possibilities together.",
+      "name_placeholder": "Your name",
+      "email_placeholder": "Your email",
+      "message_placeholder": "Your message",
+      "send_button": "Send message"
+    },
+    "footer": {
+      "rights": "All rights reserved"
+    },
+    "loading": "Loading..."
+  },
+  "pt": {
+    "nav": {
+      "home": "Início",
+      "who_we_are": "Quem somos",
+      "solutions": "Soluções",
+      "blog": "Blog",
+      "people": "Pessoas",
+      "contact_us": "Contate-nos"
+    },
+    "main": {
+      "title": "Na <span>Media Digital Group</span>, acreditamos no poder das ideias… transformando visões ousadas em negócios prósperos."
+    },
+    "about": {
+      "title": "Sobre nós",
+      "description": "Na Media Digital Group, somos especialistas em transformar produtos digitais premium em fluxos de receita lucrativos. Podemos ajudá-lo de diferentes maneiras, dependendo de suas necessidades:",
+      "mobile_operator": {
+        "title": "OPERADORA MÓVEL",
+        "description": "Se você é uma <strong>operadora móvel</strong>, entregamos conteúdo de alta qualidade que aumenta o engajamento e a receita."
+      },
+      "brands": {
+        "title": "PARA MARCAS",
+        "description": "Temos a plataforma para monetizar sua marca. Usando DCB, cartões de crédito, carteiras móveis e mais, ajudamos você a aumentar a receita e levar sua marca a todos os cantos do mundo."
+      },
+      "card1_title": "Inovação Digital",
+      "card1_desc": "Desenvolvemos estratégias digitais inovadoras que transformam a forma como as marcas se conectam com suas audiências.",
+      "card2_title": "Alcance Global",
+      "card2_desc": "Conectamos marcas com audiências em mais de 40 países, maximizando o impacto e a presença internacional.",
+      "card3_title": "Resultados Mensuráveis",
+      "card3_desc": "Fornecemos análises detalhadas e métricas precisas para otimizar continuamente o desempenho das campanhas."
+    },
+    "solutions": {
+      "title": "Nossa forma <br> de fazer acontecer",
+      "step1": {
+        "title": "OUVIMOS E ENTENDEMOS",
+        "description": "Começamos ouvindo você, entendendo seu negócio, alinhando objetivos."
+      },
+      "step2": {
+        "title": "PRODUTO COM PROPÓSITO",
+        "description": "Adaptamos nosso produto – seja criado internamente, licenciado ou em parceria com marcas líderes – para se adequar perfeitamente ao seu mercado."
+      },
+      "step3": {
+        "title": "PARCERIAS ESTRATÉGICAS",
+        "description": "Fechamos acordos com distribuidores-chave e estabelecemos operações comerciais."
+      },
+      "step4": {
+        "title": "INTEGRAÇÃO TECNOLÓGICA PERFEITA",
+        "description": "Integramos nossa plataforma perfeitamente com seus sistemas, garantindo operação suave e escalabilidade."
+      },
+      "step5": {
+        "title": "MARKETING QUE MOVE",
+        "description": "Lançamos campanhas de marketing poderosas para impulsionar adoção, engajamento e receita."
+      },
+      "card1_title": "Publicidade Digital",
+      "card1_desc": "Campanhas publicitárias eficazes em múltiplas plataformas digitais.",
+      "card2_title": "Marketing de Conteúdo",
+      "card2_desc": "Criação de conteúdo envolvente que conecta com seu público-alvo.",
+      "card3_title": "Análise de Dados",
+      "card3_desc": "Insights profundos para otimizar suas estratégias de marketing.",
+      "card4_title": "Gestão de Redes Sociais",
+      "card4_desc": "Gestão profissional dos seus perfis nas redes sociais.",
+      "card5_title": "SEO e SEM",
+      "card5_desc": "Otimização para motores de busca e marketing de busca."
+    },
+    "stats": {
+      "countries": "Confiança em mais de 40 países",
+      "users": "Servindo usuários em todo o mundo",
+      "operators": "Operadoras",
+      "partnerships": "Parcerias ativas"
+    },
+    "contact": {
+      "title": "Estamos esperando você entrar em contato ;)",
+      "form": {
+        "name": "NOME",
+        "email": "EMAIL",
+        "message": "MENSAGEM",
+        "submit": "ENVIAR",
+        "name_placeholder": "Digite seu nome",
+        "email_placeholder": "Digite seu email",
+        "message_placeholder": "Digite sua mensagem"
+      },
+      "subtitle": "Pronto para levar sua marca ao próximo nível? Vamos nos conectar e explorar as possibilidades juntos.",
+      "name_placeholder": "Seu nome",
+      "email_placeholder": "Seu email",
+      "message_placeholder": "Sua mensagem",
+      "send_button": "Enviar mensagem"
+    },
+    "footer": {
+      "rights": "Todos os direitos reservados"
+    },
+    "loading": "Carregando..."
+  }
+}
