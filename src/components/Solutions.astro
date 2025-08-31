@@ -408,7 +408,7 @@
                     const cardMargin = Math.abs(parseInt(getComputedStyle(cards[1] || cards[0]).marginLeft) || 0);
                     const effectiveCardWidth = cardWidth - cardMargin;
                     const maxScrollOriginal = effectiveCardWidth * originalCards;
-                    const scrollSpeed = 45;
+                    const scrollSpeed = 55;
                     
                     // Calcular el nuevo scroll
                     const newScroll = currentScroll + (e.deltaY > 0 ? scrollSpeed : -scrollSpeed);
