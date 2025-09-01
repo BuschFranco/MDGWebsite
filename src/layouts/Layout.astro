@@ -35,6 +35,33 @@
 		box-sizing: border-box;
 	}
 
+	/* Estilos del scrollbar */
+	::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: #f1f1f1;
+		border-radius: 4px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #874fff;
+		border-radius: 4px;
+		transition: background 0.3s ease;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #6b3acc;
+	}
+
+	/* Para Firefox */
+	html {
+		scrollbar-width: thin;
+		scrollbar-color: #874fff #f1f1f1;
+	}
+
 	#preloader {
 		position: fixed;
 		top: 0;

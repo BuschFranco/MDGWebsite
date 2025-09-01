@@ -12,11 +12,51 @@
   </div>
 
   <div class="carrousel-phone">
-
+     
      <div class="phone-container">
         <div class="frame-wrapper">
         <img src="iphoneframe.png" alt="iphone frame" class="iphone-frame">
-        <img src="linkedin.png" alt="Linkedin Logo" class="linkedin-logo">
+        
+        <!-- Carrusel automático -->
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="carousel-item active">
+              <img src="carrousel1.png" alt="LinkedIn Logo">
+            </div>
+            <div class="carousel-item">
+              <img src="carrousel2.png" alt="Google Logo">
+            </div>
+            <div class="carousel-item">
+              <img src="carrousel3.png" alt="TikTok Logo">
+            </div>
+            <div class="carousel-item">
+              <img src="carrousel4.png" alt="MEF Logo">
+            </div>
+            <div class="carousel-item">
+              <img src="carrousel5.png" alt="Media Logo">
+            </div>
+          </div>
+        </div>
+
+<div class="linkedin-container">
+  <img src="linkedin.png" alt="linkedin logo" class="linkedin-logo">
+</div>
+
+<style>
+  .linkedin-container {
+    position: absolute;
+    bottom: 26%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .linkedin-logo {
+    width: 13rem;
+    height: auto;
+  }
+</style>
+        
         </div>
     </div>
   </div>
@@ -30,7 +70,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 3rem 0;
+    margin: 3rem 0 0rem 0;
   }
 
   .frame-wrapper {
@@ -38,14 +78,70 @@
     width: fit-content;
   }
 
-  .linkedin-logo {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: auto;
-    z-index: 1;
+  /* Estilos del carrusel automático */
+   .carousel-container {
+     position: absolute;
+     top: 38%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 60rem;
+     height: auto;
+     overflow: visible;
+     z-index: 1;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+ 
+   .carousel-track {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 500%;
+     height: 100%;
+     position: relative;
+     transition: transform 0.8s ease-in-out;
+   }
+ 
+   .carousel-item {
+     flex: 0 0 20%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     opacity: 0.4;
+     filter: blur(1.5px);
+     transform: scale(0.7);
+     transition: all 0.8s ease-in-out;
+     z-index: 1;
+   }
+ 
+   .carousel-item.active {
+     opacity: 1;
+     filter: blur(0);
+     transform: scale(1);
+     z-index: 2;
+   }
+ 
+   .carousel-item img {
+      width: 25rem;
+      height: 25rem;
+      object-fit: cover;
+      border-radius: 2rem;
+      box-shadow: 0 0 18px rgba(0, 0, 0, 0.61);
+      transition: all 0.8s ease-in-out;
+    }
+
+   .carousel-item.active img {
+      width: 31rem;
+      height: 31rem;
+    }
+
+  /* Animación automática */
+  @keyframes carousel-rotate {
+    0% { opacity: 0.3; filter: blur(2px); transform: scale(0.8); }
+    20% { opacity: 1; filter: blur(0); transform: scale(1); }
+    80% { opacity: 1; filter: blur(0); transform: scale(1); }
+    100% { opacity: 0.3; filter: blur(2px); transform: scale(0.8); }
   }
 </style>
 
@@ -102,6 +198,41 @@
   </footer>
 </section>
 
+<script>
+  // JavaScript para el carrusel automático
+  document.addEventListener('DOMContentLoaded', function() {
+    const carouselTrack = document.querySelector('.carousel-track');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    let currentIndex = 0;
+
+    function rotateCarousel() {
+      // Remover clase active de todos los elementos
+      carouselItems.forEach(item => item.classList.remove('active'));
+      
+      // Agregar clase active al elemento actual
+      carouselItems[currentIndex].classList.add('active');
+      
+      // Mover el track para centrar el elemento activo (centrar en el elemento del medio)
+      const translateX = -(currentIndex * 20) + 40; // Offset para centrar
+      carouselTrack.style.transform = `translateX(${translateX}%)`;
+      
+      // Incrementar índice
+      currentIndex = (currentIndex + 1) % carouselItems.length;
+    }
+
+    // Inicializar con el tercer elemento activo y centrado
+    if (carouselItems.length > 0) {
+      currentIndex = 2; // Comenzar en el elemento 3 (índice 2)
+      carouselItems[currentIndex].classList.add('active');
+      const translateX = -(currentIndex * 20) + 40;
+      carouselTrack.style.transform = `translateX(${translateX}%)`;
+    }
+
+    // Rotar cada 3 segundos
+    setInterval(rotateCarousel, 3000);
+  });
+</script>
+
 <style>
   .backstage-section {
     min-height: 100vh;
@@ -141,34 +272,29 @@
     margin: 0 auto;
     max-width: 30rem;
     height: auto;
-    padding: 1rem;
+    padding: 1rem 1rem 0rem 1rem;
   }
 
   .contact-section {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 6rem;
+    gap: 15rem;
     max-width: 1000px;
-    margin: 0 auto 6rem;
+    margin: -6rem auto 0rem;
     align-items: start;
   }
 
   .contact-text h2 {
-    font-size: 2.4rem;
+    font-size: 3rem;
     color: #2a2a2a;
-    line-height: 1.3;
+    line-height: 1.1;
+    width: 23rem;
     margin: 0;
     font-weight: 500;
   }
 
   .form {
-    padding: 2.5rem;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  }
-
-  .form-group {
-    margin-bottom: 2.5rem;
+    padding: 0rem 0rem 2.5rem 0rem;
   }
 
   .form-group label {
@@ -207,7 +333,7 @@
 
   .submit-btn {
     width: 100%;
-    padding: 1.2rem;
+    padding: .8rem;
     background: #1976d2;
     color: white;
     border: none;
@@ -306,6 +432,10 @@
     .iphone-frame {
       max-width: 250px;
     }
+    
+    .carousel-item img {
+      max-width: 100px;
+    }
   }
   
   @media (max-width: 768px) {
@@ -334,6 +464,31 @@
     
     .iphone-frame {
       max-width: 220px;
+    }
+    
+    .carousel-container {
+      width: 85%;
+      height: 35%;
+    }
+    
+    .carousel-item img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .carousel-item.active img {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .carousel-item.active img {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .carousel-item.active img {
+      width: 120px;
+      height: 120px;
     }
     
     .contact-section {
@@ -399,6 +554,16 @@
       max-width: 180px;
     }
     
+    .carousel-container {
+      width: 90%;
+      height: 30%;
+    }
+    
+    .carousel-item img {
+      width: 100px;
+      height: 100px;
+    }
+    
     .contact-section {
       gap: 2rem;
       margin-bottom: 3rem;
@@ -450,6 +615,16 @@
     
     .iphone-frame {
       max-width: 150px;
+    }
+    
+    .carousel-container {
+      width: 95%;
+      height: 25%;
+    }
+    
+    .carousel-item img {
+      width: 80px;
+      height: 80px;
     }
     
     .contact-text h2 {
